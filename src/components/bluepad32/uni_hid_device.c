@@ -319,10 +319,10 @@ bool uni_hid_device_is_cod_supported(uint32_t cod) {
 }
 
 uni_error_t uni_hid_device_on_device_discovered(bd_addr_t addr, const char* name, uint16_t cod, uint8_t rssi) {
-    if (!uni_bt_allowlist_is_allowed_addr(addr)) {
-        loge("Ignoring device, not in allow-list: %s\n", bd_addr_to_str(addr));
-        return UNI_ERROR_IGNORE_DEVICE;
-    }
+    // if (!uni_bt_allowlist_is_allowed_addr(addr)) {
+    //     loge("Ignoring device, not in allow-list: %s\n", bd_addr_to_str(addr));
+    //     return UNI_ERROR_IGNORE_DEVICE;
+    // }
 
     // As returned by BTStack, the bigger the RSSI number, the better, being 255 the closest possible (?).
     if (rssi < (255 - 100)) {
